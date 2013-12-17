@@ -47,6 +47,12 @@ window.WineListItemView = Backbone.View.extend({
     template:_.template($('#tpl-wine-list-item').html()),
 
     initialize:function () {
+
+        //When a wine is changed, you want the corresponding WineListItemView 
+        //to re-render automatically to reflect the change. To make that happen, 
+        //you bind the View to the change event of its model, and execute the render 
+        //function when the event is fired.
+
         this.model.bind("change", this.render, this);
         this.model.bind("destroy", this.close, this);
     },
@@ -67,6 +73,12 @@ window.WineView = Backbone.View.extend({
     template:_.template($('#tpl-wine-details').html()),
 
     initialize:function () {
+
+        //When a wine is changed, you want the corresponding WineListItemView 
+        //to re-render automatically to reflect the change. To make that happen, 
+        //you bind the View to the change event of its model, and execute the render 
+        //function when the event is fired.
+        
         this.model.bind("change", this.render, this);
     },
 
